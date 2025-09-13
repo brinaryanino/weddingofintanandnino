@@ -1,126 +1,127 @@
 export const data = {
-    bride: {
-        L: {
-            id: 1,
-            name: 'Lorem Ipsum',
-            child: 'Putra ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
-            image: './src/assets/images/cowo.png'
-        },
-        P: {
-            id: 2,
-            name: 'Ipsum Lorem',
-            child: 'Putri ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
-            image: './src/assets/images/cewe.png'
-        },
-
-        couple: './src/assets/images/couple.png'
+  bride: {
+    L: {
+      id: 1,
+      name: "Brinarya Nino Sudhipurwa S.Kom",
+      child: "Putra Pertama",
+      father: "Subri Ahadi",
+      mother: "Sunariyati Karya Ningdiah",
+      image: "./src/assets/images/cowo.png",
+    },
+    P: {
+      id: 2,
+      name: "Bdn. Intan Zahiroh S.Keb",
+      child: "Putri Kelima",
+      father: "Zainul Falach",
+      mother: "Dewi Maryam",
+      image: "./src/assets/images/cewe.png",
     },
 
-    time: {
-        marriage: {
-            year: '2030',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
-            hours: {
-                start: '08.00',
-                finish: 'Selesai'
-            }
-        },
-        reception: {
-            year: '2024',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
-            hours: {
-                start: '11.00',
-                finish: 'Selesai'
-            }
-        },
-        address: 'Kp. Lorem, RT 000/ RW 000, Desa.Lorem, Kec.Ipsum, Kab.Lorem, Lorem (1234)'
+    couple: "./src/assets/images/couple.png",
+  },
+
+  time: {
+    marriage: {
+      year: "2026",
+      month: "Januari",
+      date: "17",
+      day: "Sabtu",
+      hours: {
+        start: "08.00",
+        finish: "Selesai",
+      },
     },
-
-    link: {
-        calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
-        map: 'https://maps.app.goo.gl/q1Ask2Jgd4ekiiKBA',
+    reception: {
+      year: "2026",
+      month: "Januari",
+      date: "17",
+      day: "Sabtu",
+      hours: {
+        start: "10.00",
+        finish: "Selesai",
+      },
     },
+    address:
+      "Jl. Raya Puntir, Purwosari, Pasuruan, Jawa Timur (Tb Rizquna Sumber Agung)",
+  },
 
-    galeri: [
-        {
-            id: 1,
-            image: './src/assets/images/1.png'
-        },
-        {
-            id: 2,
-            image: './src/assets/images/2.png'
-        },
-        {
-            id: 3,
-            image: './src/assets/images/3.png'
-        },
-        {
-            id: 4,
-            image: './src/assets/images/4.png'
-        },
-        {
-            id: 5,
-            image: './src/assets/images/5.png'
-        }
-    ],
+  link: {
+    calendar: "https://calendar.app.google/4YX8aFRTKbATBmyP6",
+    map: "https://maps.app.goo.gl/xbBdK7W7SYjzhEbF9",
+  },
 
-    bank: [
-        {
-            id: 1,
-            name: 'Lorem Ipsum',
-            icon: './src/assets/images/bca.png',
-            rekening: '12345678'
-        },
-        {
-            id: 2,
-            name: 'Ipsum Lorem',
-            icon: './src/assets/images/bri.png',
-            rekening: '12345678'
-        },
-    ],
+  galeri: [
+    {
+      id: 1,
+      image: "./src/assets/images/1.png",
+    },
+    {
+      id: 2,
+      image: "./src/assets/images/2.png",
+    },
+    {
+      id: 3,
+      image: "./src/assets/images/3.png",
+    },
+    {
+      id: 4,
+      image: "./src/assets/images/4.png",
+    },
+    {
+      id: 5,
+      image: "./src/assets/images/5.png",
+    },
+  ],
 
-    audio: './src/assets/audio/wedding.mp3',
+  bank: [
+    {
+      id: 1,
+      name: "BCA",
+      icon: "./src/assets/images/bca.png",
+      rekening: "3151304514",
+    },
+    {
+      id: 2,
+      name: "Mandiri",
+      icon: "./src/assets/images/bri.png",
+      rekening: "12345678",
+    },
+  ],
 
-    api: 'https://script.google.com/macros/s/AKfycbyydz6N4p2VWUG8zsXeURv6ap9RP8a4eC3x6N3x6qTDjMVr1cIBz9S0NsHw2rWvBOSXGg/exec',
+  audio: "./src/assets/audio/wedding.mp3",
 
-    navbar: [
-        {
-            id: 1,
-            teks: 'Home',
-            icon: 'bx bxs-home-heart',
-            path: '#home',
-        },
-        {
-            id: 2,
-            teks: 'Mempelai',
-            icon: 'bx bxs-group',
-            path: '#bride',
-        },
-        {
-            id: 3,
-            teks: 'Tanggal',
-            icon: 'bx bxs-calendar-check',
-            path: '#time',
-        },
-        {
-            id: 4,
-            teks: 'Galeri',
-            icon: 'bx bxs-photo-album',
-            path: '#galeri',
-        },
-        {
-            id: 5,
-            teks: 'Ucapan',
-            icon: 'bx bxs-message-rounded-dots',
-            path: '#wishas',
-        },
-    ],
-}
+  api: "https://script.google.com/macros/s/AKfycbz-4IuNvMwXJSYy9bhzC_yCJzTOBABk_V0O_HGLT0kHMRZxJd2MYlQGFOxPnnV5Dj4jVw/exec",
+
+  navbar: [
+    {
+      id: 1,
+      teks: "Home",
+      icon: "bx bxs-home-heart",
+      path: "#home",
+    },
+    {
+      id: 2,
+      teks: "Mempelai",
+      icon: "bx bxs-group",
+      path: "#bride",
+    },
+    {
+      id: 3,
+      teks: "Tanggal",
+      icon: "bx bxs-calendar-check",
+      path: "#time",
+    },
+    {
+      id: 4,
+      teks: "Galeri",
+      icon: "bx bxs-photo-album",
+      path: "#galeri",
+    },
+    {
+      id: 5,
+      teks: "Ucapan",
+      icon: "bx bxs-message-rounded-dots",
+      path: "#wishas",
+    },
+  ],
+};
