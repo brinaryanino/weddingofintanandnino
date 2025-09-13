@@ -1,40 +1,40 @@
-import {data} from "../assets/data/data.js";
+import { data } from "../assets/data/data.js";
 
 export const comentarService = {
-    getComentar: async function () {
-        try {
-            const response = await fetch(data.api);
-            return await response.json();
-        } catch (error) {
-            return {error: error && error.message};
-        }
-    },
+  getComentar: async function () {
+    try {
+      const response = await fetch(data.api);
+      return await response.json();
+    } catch (error) {
+      return { error: error && error.message };
+    }
+  },
 
-    addComentar: async function ({id, name, status, message, date, color}) {
-        const comentar = {
-            id: id,
-            name: name,
-            status: status,
-            message: message,
-            date: date,
-            color: color,
-        };
+  addComentar: async function ({ id, name, status, message, date, color }) {
+    const comentar = {
+      id: id,
+      name: name,
+      status: status,
+      message: message,
+      date: date,
+      color: color,
+    };
 
-        try {
-            const response = await fetch(data.api, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(comentar),
-            });
+    try {
+      const response = await fetch(data.api, {
+        method: "POST",
+        // mode: 'cors', // 'cors' is the default, so you can remove this line
+        redirect: "follow", // Good practice for Apps Script
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8", // Use text/plain for this simple case
+        },
+        body: JSON.stringify(comentar), // The data is sent as a JSON string
+      });
 
-            return await response.json();
-
-        } catch (error) {
-            console.error('Post error:', error);
-            return {error: error.message};
-        }
-    },
+      return await response.json(); // Now you can read the response
+    } catch (error) {
+      console.error("Post error:", error);
+      return { error: error.message };
+    }
+  },
 };
