@@ -79,12 +79,14 @@ export const data = {
       name: "BCA",
       icon: "./src/assets/images/bca.png",
       rekening: "3151304514",
+      pemilik: "Intan Zahiroh",
     },
     {
       id: 2,
       name: "Mandiri",
       icon: "./src/assets/images/mandiri.png",
       rekening: "1610010938822",
+      pemilik: "Brinarya Nino Sudhipurwa",
     },
   ],
 
