@@ -263,30 +263,25 @@
 
         <div data-aos="zoom-in" data-aos-duration="1000">
           <h2>Ucapan & Doa</h2>
-          <form>
+          <form id="comment-form">
             <label for="name">Nama</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="masukan nama anda"
-              autocomplete="off"
-              required
-            />
+            <input type="text" name="name" id="name" required />
+
             <label for="status">Kehadiran</label>
-            <select name="status" id="status" required aria-required="true">
+            <select name="status" id="status" required>
               <option value="" disabled selected>konfirmasi kehadiran</option>
               <option value="y">Hadir</option>
               <option value="n">Tidak Hadir</option>
             </select>
+
             <label for="message">Ucapan & Doa</label>
             <textarea
               name="message"
               id="message"
-              placeholder="Tulis ucapan & Doa"
               required
               minlength="8"
             ></textarea>
+
             <button type="submit">Kirim</button>
           </form>
         </div>
@@ -295,7 +290,7 @@
           <p style="margin-bottom: 0.5rem"></p>
           <hr />
 
-          <ul aria-label="list comentar"></ul>
+          <ul id="comment-list" aria-label="list comentar"></ul>
           <hr style="margin-top: 1rem" />
           <div class="button-grup">
             <button>
