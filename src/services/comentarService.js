@@ -4,7 +4,8 @@ export const comentarService = {
   getComentar: async function () {
     try {
       const response = await fetch(data.api);
-      return await response.json();
+      const jsonData = await response.json();
+      return jsonData;
     } catch (error) {
       return { error: error && error.message };
     }
@@ -31,10 +32,11 @@ export const comentarService = {
         body: JSON.stringify(comentar), // The data is sent as a JSON string
       });
 
-      return await response.json(); // Now you can read the response
+      const jsonData = await response.json();
+      return jsonData;
     } catch (error) {
       console.error("Post error:", error);
-      return { error: error.message };
+      return { error: error && error.message };
     }
   },
 };
