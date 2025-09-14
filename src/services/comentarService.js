@@ -1,28 +1,40 @@
 import { data } from "../assets/data/data.js";
 
-async function loadComments() {
-  try {
-    const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbwXUqhzMOxb_i2o-mhNGzaDVQmhg-aXQfe2hZGJ_9VusMDK2MxqmVEsF6xSqnsdQ4Ze7g/exec"
-    );
-    const data = await response.json();
+export const comentarService = {
+  getComentar: async function () {
+    try {
+      const response = await fetch(data.api);
+      return await response.json();
+    } catch (error) {
+      return { error: error && error.message };
+    }
+  },
 
-    const container = document.getElementById("comments");
-    container.innerHTML = "";
+  addComentar: async function ({ id, name, status, message, date, color }) {
+    const comentar = {
+      id: id,
+      name: name,
+      status: status,
+      message: message,
+      date: date,
+      color: color,
+    };
 
-    data.forEach((row) => {
-      container.innerHTML += `
-        <div style="color:${row.color || "#000"}">
-          <b>${row.name}</b> (${row.status})<br>
-          ${row.message}<br>
-          <small>${row.date}</small>
-          <hr>
-        </div>
-      `;
-    });
-  } catch (err) {
-    console.error("Error:", err);
-  }
-}
+    try {
+      const response = await fetch(data.api, {
+        method: "POST",
+        // mode: 'cors', // 'cors' is the default, so you can remove this line
+        redirect: "follow", // Good practice for Apps Script
+        headers: {
+          "Content-Type": "application/json", // Use text/plain for this simple case
+        },
+        body: JSON.stringify(comentar), // The data is sent as a JSON string
+      });
 
-loadComments();
+      return await response.json(); // Now you can read the response
+    } catch (error) {
+      console.error("Post error:", error);
+      return { error: error.message };
+    }
+  },
+};
