@@ -1,42 +1,37 @@
 import { data } from "../assets/data/data.js";
 
 export const comentarService = {
+  // Ambil komentar dari Apps Script
   getComentar: async function () {
     try {
       const response = await fetch(data.api);
-      const jsonData = await response.json();
-      return jsonData;
+      if (!response.ok) throw new Error("Network response was not ok");
+      return await response.json();
     } catch (error) {
-      return { error: error && error.message };
+      console.error("Get error:", error);
+      return { error: error.message };
     }
   },
 
+  // Tambah komentar ke Apps Script
   addComentar: async function ({ id, name, status, message, date, color }) {
-    const comentar = {
-      id: id,
-      name: name,
-      status: status,
-      message: message,
-      date: date,
-      color: color,
-    };
+    const comentar = { id, name, status, message, date, color };
 
     try {
       const response = await fetch(data.api, {
         method: "POST",
-        // mode: 'cors', // 'cors' is the default, so you can remove this line
-        redirect: "follow", // Good practice for Apps Script
+        redirect: "follow",
         headers: {
-          "Content-Type": "application/json", // Use text/plain for this simple case
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(comentar), // The data is sent as a JSON string
+        body: JSON.stringify(comentar),
       });
 
-      const jsonData = await response.json();
-      return jsonData;
+      if (!response.ok) throw new Error("Failed to post comment");
+      return await response.json();
     } catch (error) {
       console.error("Post error:", error);
-      return { error: error && error.message };
+      return { error: error.message };
     }
   },
 };
