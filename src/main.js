@@ -5,9 +5,10 @@ import { galeri } from "./js/galeri.js";
 import { wishas } from "./js/wishas.js";
 import { navbar } from "./js/navbar.js";
 import { welcome } from "./js/welcome.js";
+import { comentarService } from "./services/comentarService.js";
 
 // load content
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   AOS.init();
 
   welcome();
@@ -17,9 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
   time();
   galeri();
   wishas();
-});
 
-import { comentarService } from "./services/comentarService.js";
+  await renderComments();
+  setupForm();
+});
 
 async function renderComments() {
   const container = document.getElementById("comment-list");
@@ -64,8 +66,7 @@ function setupForm() {
     const name = form.name.value.trim();
     const status = form.status.value;
     const message = form.message.value.trim();
-    const date = new Date().toLocaleString("id-ID"); // format waktu Indonesia
-
+    const date = new Date().toLocaleString("id-ID");
     // id bisa pakai timestamp biar unik
     const newComment = {
       id: Date.now().toString(),
@@ -73,7 +74,7 @@ function setupForm() {
       status,
       message,
       date,
-      color: "#000000", // opsional, bisa disesuaikan
+      color: "#000000",
     };
 
     try {
@@ -90,9 +91,3 @@ function setupForm() {
     }
   });
 }
-
-// Jalankan saat halaman siap
-document.addEventListener("DOMContentLoaded", () => {
-  renderComments();
-  setupForm();
-});
