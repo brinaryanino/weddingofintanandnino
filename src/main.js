@@ -56,6 +56,27 @@ async function renderComments() {
   }
 }
 
+// In your app.js or main.js file
+
+const loadInitialComments = async () => {
+  loadingSpinner.style.display = "block";
+
+  // Fetch the comments
+  const response = await comentarService.getComentar();
+
+  // ADD THIS CHECK!
+  // This ensures you only proceed if 'response.data' is an actual array.
+  if (response && Array.isArray(response.data)) {
+    displayComments(response.data);
+  } else {
+    // Handle the error gracefully if the API fails
+    console.error("Failed to load comments or no comments found:", response);
+    commentsContainer.innerHTML =
+      "<p>Gagal memuat ucapan. Coba segarkan halaman.</p>"; // "Failed to load comments. Try refreshing."
+  }
+
+  loadingSpinner.style.display = "none";
+};
 // Handle submit form
 function setupForm() {
   const form = document.getElementById("comment-form");
