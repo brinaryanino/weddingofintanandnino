@@ -23,41 +23,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupForm();
 });
 
-async function renderComments() {
-  const container = document.getElementById("comment-list");
-  container.innerHTML = "<li>Loading...</li>";
-
-  try {
-    const data = await comentarService.getComentar();
-    console.log("Data komentar:", data);
-
-    if (!data || data.length === 0) {
-      container.innerHTML = "<li>Belum ada komentar</li>";
-      return;
-    }
-
-    container.innerHTML = "";
-
-    data.forEach((row) => {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <div class="comment-item">
-          <strong>${row.name}</strong> (${
-        row.status === "y" ? "Hadir" : "Tidak Hadir"
-      })<br>
-          ${row.message}<br>
-          <small>${row.date}</small>
-        </div>
-      `;
-      container.appendChild(li);
-    });
-  } catch (err) {
-    container.innerHTML = `<li style="color:red;">Error: ${err.message}</li>`;
-  }
-}
-
-// In your app.js or main.js file
-
 const loadInitialComments = async () => {
   loadingSpinner.style.display = "block";
 
