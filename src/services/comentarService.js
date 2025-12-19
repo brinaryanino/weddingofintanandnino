@@ -5,12 +5,13 @@ export const comentarService = {
   getComentar: async function () {
     try {
       const response = await fetch(
-        `https://script.google.com/macros/s/1gKLTa21AscSYRplFajRbGzoSlBh_fHJzF239PcP9ZsQ/exec`
+        `https://script.google.com/macros/s/AKfycbzUkkSDXYjNUubrkKioKAyPFCHhgJqZXDXWERbYktDok8NKrfcWE8bvvBhYGJ2FMBnt3g/exec`
       );
       if (!response.ok) throw new Error("Network response was not ok");
       return await response.json();
     } catch (error) {
       console.error("Get error:", error);
+      console.log("Gagal mengambil:111", error);
       return { error: error.message };
     }
   },
@@ -30,9 +31,11 @@ export const comentarService = {
       });
 
       if (!response.ok) throw new Error("Failed to post comment");
+      console.log("Gagal mengambil komentar:", error);
       return await response.json();
     } catch (error) {
       console.error("Post error:", error);
+      console.log("Gagal mengambil:", error);
       return { error: error.message };
     }
   },
