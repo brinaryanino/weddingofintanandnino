@@ -1,42 +1,48 @@
 import { data } from "../assets/data/data.js";
 
 export const comentarService = {
-  // Ambil komentar dari Apps Script
-  getComentar: async function () {
-    try {
-      const response = await fetch(
-        `https://script.google.com/macros/s/AKfycbzUkkSDXYjNUubrkKioKAyPFCHhgJqZXDXWERbYktDok8NKrfcWE8bvvBhYGJ2FMBnt3g/exec`
-      );
-      if (!response.ok) throw new Error("Network response was not ok");
-      return await response.json();
-    } catch (error) {
-      console.error("Get error:", error);
-      console.log("Gagal mengambil:111", error);
-      return { error: error.message };
-    }
-  },
-
-  // Tambah komentar ke Apps Script
-  addComentar: async function ({ id, name, status, message, date, color }) {
-    const comentar = { id, name, status, message, date, color };
-
+  // GET komentar
+  getComentar: async () => {
     try {
       const response = await fetch(data.api, {
-        method: "POST",
+        method: "GET",
         redirect: "follow",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(comentar),
       });
 
-      if (!response.ok) throw new Error("Failed to post comment");
-      console.log("Gagal mengambil komentar:", error);
-      return await response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error ${response.status}`);
+      }
+      console.log("Get response:", response);
+      const text = await response.text();
+      return JSON.parse(text);
+
     } catch (error) {
-      console.error("Post error:", error);
-      console.log("Gagal mengambil:", error);
+      console.error("Get error:", error);
       return { error: error.message };
     }
   },
+
+  // POST komentar
+  addComentar: async ({ id, name, status, message, date, color }) => {
+    try {
+      const body = new URLSearchParams({
+        id,
+        name,
+        status,
+        message,
+        date,
+        color
+      });
+      const res = await fetch(data.api, {
+        method: "POST",
+        body
+      });
+      const text = await res.text();
+      console.log("RAW:", text);
+      return JSON.parse(text);
+    } catch (err) {
+      console.error("POST ERROR:", err);
+      return { error: err.message };
+    }
+  }
 };
