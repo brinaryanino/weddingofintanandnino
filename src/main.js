@@ -66,13 +66,14 @@ function setupForm() {
     try {
       const res = await comentarService.addComentar(newComment);
       console.log("Hasil POST:", res);
-
+      console.log("Komentar berhasil ditambahkan:");
       // reset form
       form.reset();
 
       // render ulang komentar biar kelihatan langsung
       await renderComments();
     } catch (err) {
+      console.log("Gagal menambahkan komentar:", err);
       alert("Gagal kirim komentar: " + err.message);
     }
   });
