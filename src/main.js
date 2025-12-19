@@ -66,7 +66,6 @@ function setupForm() {
     try {
       const res = await comentarService.addComentar(newComment);
       console.log("Hasil POST:", res);
-
       console.log("Komentar berhasil ditambahkan:");
       // reset form
       form.reset();
