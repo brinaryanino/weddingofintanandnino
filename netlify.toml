@@ -1,6 +1,6 @@
 [build]
   functions = "netlify/functions"
-  publish = "dist"   # sesuaikan dengan folder build project kamu (misalnya "build" untuk CRA)
+  publish = "."   # sesuaikan dengan folder build project kamu (misalnya "build" untuk CRA)
 
 [functions]
   node_bundler = "esbuild"
