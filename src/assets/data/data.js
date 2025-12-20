@@ -6,7 +6,7 @@ export const data = {
       child: "Putra Pertama",
       father: "Subri Ahadi",
       mother: "Sunariyati Karya Ningdiah",
-      image: "./src/assets/images/cowo.png",
+      image: "./src/assets/images/cowo-bg-putih.JPG",
     },
     P: {
       id: 2,
@@ -14,10 +14,10 @@ export const data = {
       child: "Putri Kelima",
       father: "Zainul Falach",
       mother: "Dewi Maryam",
-      image: "./src/assets/images/cewe.png",
+      image: "./src/assets/images/cewe-bg-putih.JPG",
     },
 
-    couple: "./src/assets/images/couple.png",
+    couple: "./src/assets/images/couple.jpg",
   },
 
   time: {
