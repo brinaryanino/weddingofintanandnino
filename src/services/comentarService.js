@@ -36,6 +36,11 @@ export const comentarService = {
       const res = await fetch(data.api, {
         method: "POST",
         body
+        color,
+      });
+      const res = await fetch(data.api, {
+        method: "POST",
+        body,
       });
       const text = await res.text();
       console.log("RAW:", text);

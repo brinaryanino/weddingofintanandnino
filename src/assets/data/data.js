@@ -6,7 +6,7 @@ export const data = {
       child: "Putra Pertama",
       father: "Subri Ahadi",
       mother: "Sunariyati Karya Ningdiah",
-      image: "./src/assets/images/cowo.png",
+      image: "./src/assets/images/cowo-bg-putih.JPG",
     },
     P: {
       id: 2,
@@ -14,10 +14,10 @@ export const data = {
       child: "Putri Kelima",
       father: "Zainul Falach",
       mother: "Dewi Maryam",
-      image: "./src/assets/images/cewe.png",
+      image: "./src/assets/images/cewe-bg-putih.JPG",
     },
 
-    couple: "./src/assets/images/couple.png",
+    couple: "./src/assets/images/couple.jpg",
   },
 
   time: {
@@ -53,23 +53,27 @@ export const data = {
   galeri: [
     {
       id: 1,
-      image: "./src/assets/images/1.png",
+      image: "./src/assets/images/1.jpg",
     },
     {
       id: 2,
-      image: "./src/assets/images/2.png",
+      image: "./src/assets/images/2.jpg",
     },
     {
       id: 3,
-      image: "./src/assets/images/3.png",
+      image: "./src/assets/images/3.jpg",
     },
     {
       id: 4,
-      image: "./src/assets/images/4.png",
+      image: "./src/assets/images/4.jpg",
     },
     {
       id: 5,
-      image: "./src/assets/images/5.png",
+      image: "./src/assets/images/5.jpg",
+    },
+    {
+      id: 6,
+      image: "./src/assets/images/6.jpg",
     },
   ],
 
