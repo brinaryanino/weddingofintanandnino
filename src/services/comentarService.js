@@ -15,7 +15,6 @@ export const comentarService = {
       console.log("Get response:", response);
       const text = await response.text();
       return JSON.parse(text);
-
     } catch (error) {
       console.error("Get error:", error);
       return { error: error.message };
@@ -31,11 +30,6 @@ export const comentarService = {
         status,
         message,
         date,
-        color
-      });
-      const res = await fetch(data.api, {
-        method: "POST",
-        body
         color,
       });
       const res = await fetch(data.api, {
@@ -49,5 +43,5 @@ export const comentarService = {
       console.error("POST ERROR:", err);
       return { error: err.message };
     }
-  }
+  },
 };
