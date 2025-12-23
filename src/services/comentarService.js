@@ -30,6 +30,11 @@ export const comentarService = {
         status,
         message,
         date,
+        color
+      });
+      const res = await fetch(data.api, {
+        method: "POST",
+        body
         color,
       });
       const res = await fetch(data.api, {
