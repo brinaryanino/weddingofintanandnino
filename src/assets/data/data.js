@@ -17,7 +17,7 @@ export const data = {
       image: "./src/assets/images/cewe-bg-putih.JPG",
     },
 
-    couple: "./src/assets/images/couple.jpg",
+    couple: "./src/assets/images/chibi-icon.png",
   },
 
   time: {
