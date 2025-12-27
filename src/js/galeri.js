@@ -12,16 +12,32 @@ export const galeri = () => {
     nextButton,
     showAllButton,
   ] = galeriElement.children[0].children;
+
   const [__, showAllBox, closeButton] = showAllContainer.children;
+
+  const renderImage = (item) => {
+    figureElement.innerHTML = `
+      <img 
+        src="${item.image}" 
+        alt="galeri image" 
+        id="${item.id}" 
+        class="fade-image"
+      >
+    `;
+  };
 
   const initializeGallery = () => {
     const initialImage = data.galeri[0];
-    figureElement.innerHTML = `<img src="${initialImage.image}" alt="galeri image" id="${initialImage.id}">`;
+    renderImage(initialImage);
 
+    paginationElement.innerHTML = "";
     data.galeri.forEach((item, index) => {
-      paginationElement.innerHTML += `<li data-id="${item.id}" ${
-        index === 0 ? 'class="active"' : ""
-      }></li>`;
+      paginationElement.innerHTML += `
+        <li 
+          data-id="${item.id}" 
+          class="${index === 0 ? "active" : ""}"
+        ></li>
+      `;
     });
 
     updateNavigationButtons(initialImage.id);
@@ -29,43 +45,48 @@ export const galeri = () => {
 
   const updateGalleryImage = (id) => {
     const selectedImage = data.galeri.find((item) => item.id === id);
+    if (!selectedImage) return;
 
-    if (selectedImage) {
-      figureElement.innerHTML = `<img src="${selectedImage.image}" alt="galeri image" id="${selectedImage.id}">`;
+    const currentImg = figureElement.querySelector("img");
+    if (currentImg) {
+      currentImg.classList.add("fade-out");
 
-      paginationElement.querySelectorAll("li").forEach((li) => {
-        li.classList.toggle("active", parseInt(li.dataset.id) === id);
-      });
+      setTimeout(() => {
+        renderImage(selectedImage);
+      }, 300);
+    } else {
+      renderImage(selectedImage);
     }
+
+    paginationElement.querySelectorAll("li").forEach((li) => {
+      li.classList.toggle("active", parseInt(li.dataset.id) === id);
+    });
+
+    updateNavigationButtons(id);
   };
 
   const updateNavigationButtons = (id) => {
-    nextButton.dataset.id = `${id}`;
-    prevButton.dataset.id = `${id}`;
-  };
-
-  const autoPlayGallery = () => {
-    let id = parseInt(nextButton.dataset.id);
-    id = id < data.galeri.length ? id + 1 : 1;
-    updateNavigationButtons(id);
-    updateGalleryImage(id);
+    nextButton.dataset.id = id;
+    prevButton.dataset.id = id;
   };
 
   nextButton.addEventListener("click", () => {
     let id = parseInt(nextButton.dataset.id);
     if (id < data.galeri.length) {
-      id++;
-      updateNavigationButtons(id);
-      updateGalleryImage(id);
+      updateGalleryImage(id + 1);
     }
   });
 
   prevButton.addEventListener("click", () => {
     let id = parseInt(prevButton.dataset.id);
     if (id > 1) {
-      id--;
-      updateNavigationButtons(id);
-      updateGalleryImage(id);
+      updateGalleryImage(id - 1);
+    }
+  });
+
+  paginationElement.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
+      updateGalleryImage(+e.target.dataset.id);
     }
   });
 
@@ -82,12 +103,4 @@ export const galeri = () => {
   });
 
   initializeGallery();
-  setInterval(autoPlayGallery, 7000);
-
-  paginationElement.querySelectorAll("li").forEach((pagination) => {
-    pagination.addEventListener("click", (e) => {
-      const id = +e.target.dataset.id;
-      updateGalleryImage(id);
-    });
-  });
 };
