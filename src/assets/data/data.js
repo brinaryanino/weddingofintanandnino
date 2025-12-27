@@ -14,7 +14,7 @@ export const data = {
       child: "Putri Kelima",
       father: "Zainul Falach",
       mother: "Dewi Maryam",
-      image: "./src/assets/images/cewe-bg-putih.JPG",
+      image: "./src/assets/images/intan-crop.jpg",
     },
 
     couple: "./src/assets/images/chibi-icon.png",
