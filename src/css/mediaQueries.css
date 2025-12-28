@@ -1,10 +1,13 @@
 @media screen and (max-width: 768px) {
+  /* =========================
+     NAV & SECTION GLOBAL
+     ========================= */
   header nav {
     display: flex;
   }
 
   .home svg {
-    bottom: -5rem;
+    bottom: -4rem;
   }
 
   .bride,
@@ -17,40 +20,47 @@
   }
 
   /* =========================
-     GALERI (MOBILE FINAL)
+     GALERI (MOBILE FIXED)
      ========================= */
   .galeri {
     margin-top: -6rem;
-    padding: 4rem 1.4rem 4rem; /* ruang aman bawah */
+    padding: 4rem 1.4rem 4rem;
     min-height: auto;
   }
 
   .galeri .container {
-    padding: 0 1rem 1rem;
-    max-height: 500px;
-    overflow: visible; /* penting */
+    padding: 0 1rem 2rem;
+    position: relative;
+    overflow: visible;
   }
 
+  /* FOTO UTAMA */
   .galeri .container figure {
     margin-top: -1rem;
-    max-height: 260px;
+    max-height: 220px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
   }
 
   .galeri .container figure img {
-    height: 14rem;
     width: 100%;
+    height: 12rem;
     object-fit: cover;
+    border-radius: 20px;
   }
 
-  /* pagination */
+  /* =========================
+     PAGINATION
+     ========================= */
   .galeri .container ul {
-    bottom: 1.2rem;
+    bottom: 1rem;
     z-index: 5;
   }
 
   .galeri .container ul li {
     width: 1rem;
-    height: 0.2rem;
+    height: 0.25rem;
   }
 
   /* =========================
@@ -60,17 +70,19 @@
   .galeri .container button:nth-of-type(2) {
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2.6rem;
-    z-index: 20;
+    font-size: 2.4rem;
+    z-index: 15;
     color: #fff;
+    background: none;
+    border: none;
   }
 
   .galeri .container button:nth-of-type(1) {
-    left: 0.6rem;
+    left: 0.5rem;
   }
 
   .galeri .container button:nth-of-type(2) {
-    right: 0.6rem;
+    right: 0.5rem;
   }
 
   /* =========================
@@ -78,31 +90,36 @@
      ========================= */
   .galeri .container button:nth-of-type(3) {
     display: block;
-    margin: 3rem auto 0;
+    margin: 2.5rem auto 0;
     position: relative;
     z-index: 10;
   }
 
   /* =========================
-     FULLSCREEN GALLERY
+     FULLSCREEN / LIHAT SEMUA
      ========================= */
-  .galeri div:nth-of-type(2) {
-    padding: 0 1rem 4rem;
+  .galeri > div:nth-of-type(2) {
+    padding: 1rem 1rem 3rem;
+    overflow-y: auto;
   }
 
-  .galeri div:nth-of-type(2) > div {
-    margin-top: -1rem;
-    padding: 2rem 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1rem;
+  .galeri > div:nth-of-type(2) > div {
+    margin-top: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
 
-  .galeri div:nth-of-type(2) > div img {
+  .galeri > div:nth-of-type(2) > div img {
+    width: 100%;
     border-radius: 15px;
+    object-fit: cover;
   }
 
-  .galeri div:nth-of-type(2) button {
+  .galeri > div:nth-of-type(2) button {
     font-size: 1.4rem;
+    z-index: 20;
   }
 
   /* =========================
