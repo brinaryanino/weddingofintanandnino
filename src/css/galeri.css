@@ -15,6 +15,9 @@
   position: relative;
 }
 
+/* =========================
+   TITLE
+   ========================= */
 .galeri .container h2,
 .galeri div:nth-of-type(2) h2 {
   font-family: var(--sacramento);
@@ -23,6 +26,9 @@
   padding: 2rem 1rem;
 }
 
+/* =========================
+   IMAGE SLIDER
+   ========================= */
 .galeri .container figure {
   width: 100%;
   height: 35rem;
@@ -30,8 +36,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 .galeri .container figure img {
@@ -39,11 +45,10 @@
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
-  opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* ✨ Fade animation */
+/* Fade animation */
 .fade-image {
   opacity: 1;
 }
@@ -52,6 +57,9 @@
   opacity: 0;
 }
 
+/* =========================
+   PAGINATION
+   ========================= */
 .galeri .container ul {
   padding: 0.5rem;
   display: flex;
@@ -62,6 +70,7 @@
   left: 0;
   right: 0;
   bottom: 5.6rem;
+  z-index: 5;
 }
 
 .galeri .container ul li {
@@ -79,14 +88,18 @@
   background-color: #fff;
 }
 
+/* =========================
+   NAVIGATION BUTTONS
+   ========================= */
 .galeri .container button:nth-of-type(1),
 .galeri .container button:nth-of-type(2) {
   font-size: 4rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   background: none;
   border: none;
   position: absolute;
   top: 24.6rem;
+  z-index: 6;
   transition: color 0.3s ease;
 }
 
@@ -104,13 +117,18 @@
   right: 2rem;
 }
 
+/* =========================
+   BUTTON VIEW ALL
+   ========================= */
 .galeri .container button:nth-of-type(3) {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 20px;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 4;
 }
 
 .galeri .container button:nth-of-type(3):hover {
@@ -118,6 +136,9 @@
   color: #fff;
 }
 
+/* =========================
+   FULLSCREEN GALLERY
+   ========================= */
 .galeri div:nth-of-type(2) {
   width: 100%;
   height: 100vh;
@@ -170,19 +191,16 @@
 }
 
 /* =========================
-   MOBILE GALERI FIX
+   MOBILE FIX (FINAL)
    ========================= */
 @media (max-width: 768px) {
   .galeri {
-    padding: 4rem 1.5rem 8rem;
+    min-height: auto;
+    padding: 4rem 1.5rem 6rem;
   }
 
   .galeri .container {
     padding: 0 1rem 2rem;
-  }
-
-  /* pastikan panah tidak ketutup */
-  .galeri .container {
     overflow: visible;
   }
 
@@ -190,18 +208,17 @@
     height: 22rem;
   }
 
-  /* tombol prev & next */
+  /* panah */
   .galeri .container button:nth-of-type(1),
   .galeri .container button:nth-of-type(2) {
     font-size: 2.2rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #fff;
     background: rgba(0, 0, 0, 0.45);
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    z-index: 10;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,13 +232,14 @@
     right: 0.6rem;
   }
 
+  /* tombol lihat semua */
   .galeri .container button:nth-of-type(3) {
-    position: relative;
-    z-index: 2;
-    margin-top: 2.5rem;
+    display: block;
+    margin: 3rem auto 1rem;
+    z-index: 5;
   }
 
-  /* pagination dot */
+  /* pagination */
   .galeri .container ul {
     bottom: 1.2rem;
   }
