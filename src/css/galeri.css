@@ -215,6 +215,12 @@
     right: 0.6rem;
   }
 
+  .galeri .container button:nth-of-type(3) {
+    position: relative;
+    z-index: 2;
+    margin-top: 2.5rem;
+  }
+
   /* pagination dot */
   .galeri .container ul {
     bottom: 1.2rem;
