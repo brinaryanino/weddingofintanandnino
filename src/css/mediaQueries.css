@@ -33,12 +33,11 @@
 
   .galeri .container figure {
     margin-top: -1rem;
-    position: relative; /* anchor panah */
-    overflow: hidden;
+    max-height: 260px;
   }
 
   .galeri .container figure img {
-    height: 10rem;
+    height: 14rem;
     width: 100%;
     object-fit: cover;
   }
