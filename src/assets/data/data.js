@@ -84,16 +84,12 @@ export const data = {
       image: "./src/assets/images/8.webp",
     },
     {
+      id: 9,
+      image: "./src/assets/images/9.webp",
+    },
+    {
       id: 10,
       image: "./src/assets/images/10.webp",
-    },
-    {
-      id: 11,
-      image: "./src/assets/images/11.webp",
-    },
-    {
-      id: 12,
-      image: "./src/assets/images/12.webp",
     },
   ],
 
