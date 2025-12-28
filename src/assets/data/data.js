@@ -53,27 +53,51 @@ export const data = {
   galeri: [
     {
       id: 1,
-      image: "./src/assets/images/1.jpg",
+      image: "./src/assets/images/1.webp",
     },
     {
       id: 2,
-      image: "./src/assets/images/2.jpg",
+      image: "./src/assets/images/2.webp",
     },
     {
       id: 3,
-      image: "./src/assets/images/3.jpg",
+      image: "./src/assets/images/3.webp",
     },
     {
       id: 4,
-      image: "./src/assets/images/4.jpg",
+      image: "./src/assets/images/4.webp",
     },
     {
       id: 5,
-      image: "./src/assets/images/5.jpg",
+      image: "./src/assets/images/5.webp",
     },
     {
       id: 6,
-      image: "./src/assets/images/6.jpg",
+      image: "./src/assets/images/6.webp",
+    },
+    {
+      id: 7,
+      image: "./src/assets/images/7.webp",
+    },
+    {
+      id: 8,
+      image: "./src/assets/images/8.webp",
+    },
+    {
+      id: 9,
+      image: "./src/assets/images/9.webp",
+    },
+    {
+      id: 10,
+      image: "./src/assets/images/10.webp",
+    },
+    {
+      id: 11,
+      image: "./src/assets/images/11.webp",
+    },
+    {
+      id: 12,
+      image: "./src/assets/images/12.webp",
     },
   ],
 
