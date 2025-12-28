@@ -86,7 +86,7 @@ export const home = () => {
     const { bride, time, link } = data;
     figureElement.innerHTML = generateFigureContent({ bride });
     timeElement.innerHTML = generateTimeContent({ time });
-    calendarAnchor.href = link.calendar;
+    calendarAnchor.href = "https://calendar.app.google/JXfTfH6ktLkA1BRW8";
     startCountdown(homeTime, time);
   };
 
