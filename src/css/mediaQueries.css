@@ -91,10 +91,11 @@
   }
 
   .galeri div:nth-of-type(2) > div {
-    margin-top: -1rem;
-    padding: 2rem 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
 
   .galeri div:nth-of-type(2) > div img {
@@ -109,12 +110,12 @@
      SECTION LAIN
      ========================= */
   .wishas {
-    padding: 1rem 2rem 2rem;
+    padding: 1rem 1rem 2rem;
     margin-top: 2rem;
   }
 
   footer {
     margin-top: 4rem;
-    padding: 1rem 2rem 3.4rem;
+    padding: 1rem 1rem 3.4rem;
   }
 }
