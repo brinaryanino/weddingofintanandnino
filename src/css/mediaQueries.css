@@ -110,12 +110,12 @@
      SECTION LAIN
      ========================= */
   .wishas {
-    padding: 1rem 1rem 2rem;
+    padding: 1rem 1.4rem 2rem;
     margin-top: 2rem;
   }
 
   footer {
     margin-top: 4rem;
-    padding: 1rem 1rem 3.4rem;
+    padding: 1rem 1.4rem 3.4rem;
   }
 }
