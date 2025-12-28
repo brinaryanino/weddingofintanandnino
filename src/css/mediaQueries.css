@@ -21,7 +21,7 @@
      ========================= */
   .galeri {
     margin-top: -6rem;
-    padding: 4rem 1.4rem 6rem; /* ruang aman bawah */
+    padding: 4rem 1.4rem 4rem; /* ruang aman bawah */
     min-height: auto;
   }
 
@@ -38,7 +38,7 @@
   }
 
   .galeri .container figure img {
-    height: 14rem;
+    height: 10rem;
     width: 100%;
     object-fit: cover;
   }
