@@ -2,7 +2,7 @@ export const data = {
   bride: {
     L: {
       id: 1,
-      name: "Brinarya Nino Sudhipurwa S.Kom",
+      name: "Brinarya Nino Sudhipurwa",
       child: "Putra Pertama",
       father: "Subri Ahadi",
       mother: "Sunariyati Karya Ningdiah",
